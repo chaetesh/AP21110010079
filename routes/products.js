@@ -76,13 +76,12 @@ const Laptop = [
 
 router.get("/:categoryname/products/", (req, res) => {
   try {
-    console.log("first");
     const catName = req.params.categoryname;
     if (catName == "Laptop") {
       res.json(Laptop);
     }
   } catch (error) {
-    return error;
+    res.send(error);
   }
 });
 
